@@ -43,6 +43,7 @@ const AnimatedRanking = () => {
           players.map((player, i) => {
             return (
               <Animated.View
+                key={i}
                 style={styles.detailsContainer}
                 entering={SlideInLeft.delay(i * 100)}>
                 <Text style={styles.nameText}>{player.name}</Text>
