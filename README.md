@@ -22,4 +22,10 @@ npx pod-install
 
 Then run the app using Xcode or `react-native` CLI.
 
+# Examples
+
+[Animated ranking list](https://github.com/rokkoo/reanimated2playground/blob/main/src/screens/AnimatedRanking/index.js)
+
+![Radius background](https://media.giphy.com/media/jV0xqYqYlek0CtyeeF/giphy.gif)
+
 [Check Reanimated 2 documentation here.](https://docs.swmansion.com/react-native-reanimated/)
