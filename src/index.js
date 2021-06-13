@@ -1,12 +1,15 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, SafeAreaView} from 'react-native';
 
 import AnimatedLine from './screens/AnimatedLine';
+import AnimatedRanking from './screens/AnimatedRanking';
 
 function App() {
   return (
     <View style={styles.container}>
-      <AnimatedLine />
+      <SafeAreaView>
+        <AnimatedRanking />
+      </SafeAreaView>
     </View>
   );
 }
