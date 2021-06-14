@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useMemo} from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import Animated, {Layout, SlideInLeft} from 'react-native-reanimated';
