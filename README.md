@@ -27,5 +27,6 @@ Then run the app using Xcode or `react-native` CLI.
 [Animated ranking list](https://github.com/rokkoo/reanimated2playground/blob/main/src/screens/AnimatedRanking/index.js)
 
 ![Radius background](https://media.giphy.com/media/jV0xqYqYlek0CtyeeF/giphy.gif)
+![Radius background](https://media.giphy.com/media/koITIO9Ec70rh7sPAT/giphy.gif)
 
 [Check Reanimated 2 documentation here.](https://docs.swmansion.com/react-native-reanimated/)
