@@ -5,6 +5,7 @@ import Animated, {
   SlideInLeft,
   Layout,
 } from 'react-native-reanimated';
+import Details from './componets/Details';
 
 import Player from './componets/Player';
 import players from './data';
@@ -12,18 +13,20 @@ import players from './data';
 const AnimatedRanking = () => {
   const [show, setShow] = useState(true);
 
-  const handlePress = useCallback(() => setShow(!show), [show]);
+  const handlePress = useCallback(() => setShow((show) => !show), []);
 
   return (
     <Animated.View layout={Layout.springify()}>
       <Text style={styles.text}>Ranking</Text>
+
       <AnimatedLayout>
-        <Animated.View>
-          {show &&
-            players.map((player, i) => (
+        {show && (
+          <Animated.View>
+            {players.map((player, i) => (
               <Player {...player} index={i} key={i} />
             ))}
-        </Animated.View>
+          </Animated.View>
+        )}
 
         <Animated.View
           entering={SlideInLeft.delay((players.length + 1) * 100)}
@@ -39,18 +42,13 @@ const AnimatedRanking = () => {
           </Text>
         </Animated.View>
 
-        {!show &&
-          players.map((player, i) => {
-            return (
-              <Animated.View
-                key={i}
-                style={styles.detailsContainer}
-                entering={SlideInLeft.delay(i * 100)}>
-                <Text style={styles.nameText}>{player.name}</Text>
-                <Text style={styles.distanceText}>{player.distance}</Text>
-              </Animated.View>
-            );
-          })}
+        {!show && (
+          <Animated.View>
+            {players.map((player, i) => {
+              return <Details {...player} index={i} key={i} />;
+            })}
+          </Animated.View>
+        )}
       </AnimatedLayout>
     </Animated.View>
   );
@@ -86,24 +84,6 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
 
     elevation: 5,
-  },
-
-  detailsContainer: {
-    flexDirection: 'row',
-    marginLeft: 8,
-  },
-
-  nameText: {
-    marginLeft: 8,
-    color: '#283747',
-    fontSize: 16,
-  },
-
-  distanceText: {
-    marginLeft: 8,
-    color: '#283747',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
 });
 
