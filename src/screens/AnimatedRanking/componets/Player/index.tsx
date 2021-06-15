@@ -2,7 +2,14 @@ import React, {useMemo} from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import Animated, {Layout, SlideInLeft} from 'react-native-reanimated';
 
-const Player = ({name, distance, index}) => {
+interface PlayerProps {
+  name: string;
+  distance: number;
+  index: number;
+  key: number;
+}
+
+const Player: React.FC<PlayerProps> = ({name, distance, index}) => {
   const {width} = useWindowDimensions();
 
   const BAR_MAX_WIDTH = useMemo(() => width * 0.7, [width]);

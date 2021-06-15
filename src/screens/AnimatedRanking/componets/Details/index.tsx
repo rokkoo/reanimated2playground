@@ -2,10 +2,15 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import Animated, {Layout, SlideInLeft} from 'react-native-reanimated';
 
-const Details = ({name, distance, index, id}) => {
+interface DetailsProps {
+  name: string;
+  distance: number;
+  index: number;
+}
+
+const Details: React.FC<DetailsProps> = ({name, distance, index}) => {
   return (
     <Animated.View
-      key={id}
       style={styles.detailsContainer}
       entering={SlideInLeft.delay(index * 100)}
       layout={Layout.springify()}>

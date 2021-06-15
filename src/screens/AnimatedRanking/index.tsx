@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import Animated, {
   AnimatedLayout,
   SlideInLeft,
